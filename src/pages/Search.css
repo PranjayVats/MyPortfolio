@@ -1,0 +1,24 @@
+.base {
+  height: 0px;
+width: 0px;
+border-width: 100px 200px;
+border-style: solid;
+border-top-color: red;
+border-left-color: yellow;
+border-right-color: blue;
+border-bottom-color: green;
+position: relative;
+}
+
+.letter {
+font-size: 150px;
+line-height: 190px;
+position: absolute;
+left: -199px;
+top: -99px;
+width: 398px;
+height: 198px;
+background-color: white;  
+text-align: center;
+mix-blend-mode: lighten;
+}

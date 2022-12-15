@@ -1,0 +1,9 @@
+.home{
+  height: calc(100vh - 4rem);
+  overflow-x:hidden;
+  overflow-y: auto;
+}
+.Typewriter{
+  font-size: 2rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
