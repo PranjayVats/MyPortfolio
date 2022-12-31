@@ -1,5 +1,4 @@
-import React, {useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
 import News from "../assets/googleNews.png";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import Slider from "react-slick";
@@ -24,6 +23,8 @@ import netlifyIcon from "../assets/netlify.png";
 import reduxIcon from "../assets/redux.png";
 import Loader from "../layout/Loader";
 import Navbar from "../layout/Navbar";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Skills = () => {
   let [skillset] = useState({
@@ -33,11 +34,13 @@ const Skills = () => {
         heading: "Programming Languages",
         title: "C",
         url: cIcon,
+        link: "https://www.w3schools.com/c/c_intro.php"
       },
       {
         id: 2,
         title: "C++",
         url: cPlusIcon,
+        link:"https://www.w3schools.com/cpp/cpp_intro.asp"
       },
     ],
     Frontend: [
@@ -46,26 +49,31 @@ const Skills = () => {
         heading: "Frontend",
         title: "React",
         url: reactIcon,
+        link:"https://reactjs.org/"
       },
       {
         id: 2,
         title: "Javascript",
         url: javascriptIcon,
+        link:"https://www.javascript.com/"
       },
       {
         id: 3,
         title: "HTML",
         url: htmlIcon,
+        link: "https://www.w3schools.com/html/html_intro.asp"
       },
       {
         id: 4,
         title: "CSS",
         url: cssIcon,
+        link:"https://www.w3schools.com/css/css_intro.asp"
       },
       {
         id: 5,
         title: "Tailwind",
         url: tailwindIcon,
+        link:"https://tailwindcss.com/"
       },
     ],
     Backend: [
@@ -74,11 +82,13 @@ const Skills = () => {
         heading: "Backend",
         title: "Express",
         url: expressIcon,
+        link:"https://expressjs.com/"
       },
       {
         id: 2,
         title: "NodeJS",
         url: nodeIcon,
+        link:"https://nodejs.org/en/"
       },
     ],
     Database: [
@@ -87,6 +97,7 @@ const Skills = () => {
         heading: "Database",
         title: "Mongodb",
         url: mongodbIcon,
+        link:"https://www.mongodb.com/"
       },
     ],
     DevelopmentTools: [
@@ -95,16 +106,19 @@ const Skills = () => {
         heading: "Web Development Tools",
         title: "Git",
         url: gitIcon,
+        link:"https://git-scm.com/"
       },
       {
         id: 2,
         title: "Github",
         url: githubIcon,
+        link:"https://github.com/"
       },
       {
         id: 3,
         title: "Redux",
         url: reduxIcon,
+        link:"https://redux.js.org/"
       },
     ],
     CloudServices: [
@@ -113,110 +127,100 @@ const Skills = () => {
         heading: "Cloud Services",
         title: "Heroku",
         url: herokuIcon,
+        link:"https://dashboard.heroku.com/login"
       },
       {
         id: 2,
         title: "Firebase",
         url: firebaseIcon,
+        link:"https://firebase.google.com/"
       },
       {
         id: 3,
         title: "Netlify",
         url: netlifyIcon,
+        link:"https://www.netlify.com/"
       },
     ],
   });
+  const [slides, setSlides] = useState(5);
+  const [width, setWidth] = useState(window.innerWidth);
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize, false);
+    if (width >= "1100") setSlides(5);
+    else if (width >= "850") setSlides(4);
+    else if (width >= "520") setSlides(3);
+    else setSlides(1);
+  }, [width]);
   const slider = useRef(null);
   const settings = {
     className: "center",
     centerMode: true,
     infinite: true,
-    slidesToShow: 5,
-    speed: 2000,
+    slidesToShow: slides,
+    speed: 1500,
     pauseOnHover: true,
     autoplay: true,
-    autoplaySpeed:3000,
     cssEase: "linear",
   };
   const [show, setShow] = useState(false);
   useEffect(() => {
+    AOS.init();
     const timer = setTimeout(() => {
       setShow(true);
-    }, 4000);
+    }, 2500);
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="skills flex flex-col h-[calc(100vh_-_4rem)] overflow-y-auto overflow-hidden w-screen items-center">
-      {!show ? <Loader title="Skills"/>:(
-        <>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              default: {
-                duration: 0.3,
-                ease: [0, 0.71, 0.2, 1.0],
-              },
-              scale: {
-                type: "spring",
-                damping: 5,
-                stiffness: 100,
-                restDelta: 0.001,
-              },
-            }}
-          >
-            <Navbar image={News} title="Skills" search="skills"/>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              default: {
-                duration: 0.3,
-                ease: [0, 0.71, 0.2, 1.0],
-              },
-              scale: {
-                type: "spring",
-                damping: 5,
-                stiffness: 100,
-                restDelta: 0.001,
-              },
-            }}
-          >
-          <div className=" flex items-center b w-screen h-[calc(100vh_-_7.3rem)]">
-            <Slider
-              ref={slider}
-              {...settings}
-              className="w-full flex items-center"
-            >
-              {Object.values(skillset).map((s, idx) => (
-                <div className="flex flex-col p-3 font-google">
-                  <h1 className="text-center font-semibold underline underline-offset-2 text-2xl text-[#313132] hover:text-[rgb(255,99,71)] ">
-                    {s[0].heading}
-                  </h1>
-                  {s.map((i) => (
-                    <figure
-                      className="w-1/3 p-2 flex items-center cursor-pointer"
-                      key={i.id}
-                    >
-                      <img src={i.url} className="w-4/5 mr-3 rounded-lg p-1 shadow" alt="" />
-                      <figcaption className="text-lg">{i.title}</figcaption>
-                    </figure>
-                  ))}
-                </div>
-              ))}
-            </Slider>
-          </div>
-          <div className="flex absolute inset-y-1/3 w-screen justify-between px-2 pr-0 items-center z-10">
-            <button onClick={() => slider?.current?.slickPrev()}>
-              <MdArrowBackIos className="text-5xl text-orange-400 hover:text-orange-500" />
-            </button>
-            <button onClick={() => slider?.current?.slickNext()}>
-              <MdArrowForwardIos className="text-5xl text-orange-400 hover:text-orange-500" />
-            </button>
-          </div>
-          </motion.div>
-        </>
+    <div className="skills flex flex-col h-[calc(100vh_-_3rem)] md:h-[calc(100vh_-_4rem)] overflow-y-auto overflow-hidden w-screen items-center">
+      {!show ? (
+        <Loader title="Skills" />
+      ) : (
+        <div className="w-screen">
+            <Navbar image={News} title="Skills" search="skills" />
+            <div data-aos="zoom-in" data-aos-duration="1100" className="flex items-center w-screen h-[calc(100vh_-_6.1rem)] sm:h-[calc(100vh_-_6.6rem)] md:h-[calc(100vh_-_7.8rem)]">
+              <Slider
+                ref={slider}
+                {...settings}
+                className="w-full flex items-center"
+              >
+                {Object.values(skillset).map((s, idx) => (
+                  <div className="flex flex-col items-center p-3 font-google" key={idx}>
+                    <h1 className="text-center text:xl md:text-2xl font-serif font-semibold text-black hover:underline underline-offset-2 ">
+                      {s[0].heading}
+                    </h1>
+                    {s.map((i) => (
+                      <a href={i.link} target="_blank" rel="noreferrer">
+                      <figure
+                        className="w-full p-2 flex items-center cursor-pointer hover:animate-myAnim"
+                        key={i.id}
+                      >
+                        <img
+                          src={i.url}
+                          className="w-1/5 mr-1 sm:mr-3 rounded-lg p-1 shadow bg-white"
+                          alt=""
+                        />
+                        <figcaption className=" md:text-lg">
+                          {i.title}
+                        </figcaption>
+                      </figure></a>
+                    ))}
+                  </div>
+                ))}
+              </Slider>
+            </div>
+            <div className="flex absolute inset-y-1/2 w-screen justify-between px-2 pr-0 items-center z-10">
+              <button onClick={() => slider?.current?.slickPrev()}>
+                <MdArrowBackIos className="text-5xl text-indigo-700 hover:text-indigo-800" />
+              </button>
+              <button onClick={() => slider?.current?.slickNext()}>
+                <MdArrowForwardIos className="text-5xl text-indigo-700 hover:text-indigo-800" />
+              </button>
+            </div>
+        </div>
       )}
     </div>
   );

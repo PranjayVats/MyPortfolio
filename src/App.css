@@ -2,10 +2,9 @@ body >#root{
   padding: 0;
   margin: 0;
   width: 100vw;
-  height: 100vh;
   max-width: 100vw !important;
   min-height: 100vh !important;
-  overflow: hidden !important;
-  /* overflow-y: auto !important; */
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
   background-color: white;
 }

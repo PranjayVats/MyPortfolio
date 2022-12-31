@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import Drive from "../assets/drive.png";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoStarOutline } from "react-icons/io5";
@@ -16,40 +15,28 @@ import AddIcon from "../assets/addIcon.jpg";
 import { FaGoogleDrive } from "react-icons/fa";
 import Navbar from "../layout/Navbar";
 import Loader from "../layout/Loader";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Projects = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
+    AOS.init();
     const timer = setTimeout(() => {
       setShow(true);
-    }, 4000);
+    }, 2500);
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="projects flex flex-col h-[calc(100vh_-_4rem)]  overflow-y-auto overflow-x-hidden w-screen items-center">
+    <div className="projects flex flex-col h-[calc(100vh_-_3rem)] md:h-[calc(100vh_-_4rem)] overflow-y-auto overflow-x-hidden w-screen items-center">
       {!show ? (
         <Loader title="Projects" />
       ) : (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            default: {
-              duration: 0.3,
-              ease: [0, 0.71, 0.2, 1.0],
-            },
-            scale: {
-              type: "spring",
-              damping: 5,
-              stiffness: 100,
-              restDelta: 0.001,
-            },
-          }}
-        >
+        <div className="w-screen">
           <Navbar image={Drive} title="Projects" search="projects" />
-          <div className="flex lg:grid lg:grid-cols-5 lg:gap-10 h-full">
-            <div className="sidebar hidden lg:flex flex-col flex-wrap col-span-1 cursor-pointer">
-              <figure className="flex w-1/2 border-gray-200 border shadow-md rounded-3xl m-3 px-4 py-2.5 cursor-pointer hover:shadow-customShadow2">
+          <div className="flex lg:grid lg:grid-cols-5 lg:gap-10 h-[calc(100vh_-_6.1rem)] sm:h-[calc(100vh_-_6.6rem)] md:h-[calc(100vh_-_7.8rem)]">
+            <div data-aos="fade-right" data-aos-duration="1100" className="sidebar hidden lg:flex flex-col flex-wrap col-span-1 cursor-pointer">
+              <figure className="flex w-1/2 border-gray-200 border shadow-md rounded-3xl m-3 px-4 py-2.5 cursor-pointer hover:shadow-customShadow">
                 <img
                   src={AddIcon}
                   alt="addIcon"
@@ -98,7 +85,7 @@ const Projects = () => {
                 </button>
               </div>
             </div>
-            <div className="main h-full w-full flex flex-col lg:col-span-4 ">
+            <div data-aos="fade-left" data-aos-duration="1100" className="main h-full w-full flex flex-col lg:col-span-4">
               <div className="flex flex-row justify-between items-center my-2 mx-2">
                 <div className="flex px-2 py-1 text-[#3C4043] items-center rounded-lg hover:bg-[#F1F3F4]">
                   <p>My Drive</p>
@@ -110,17 +97,19 @@ const Projects = () => {
                 </div>
               </div>
               <hr />
-              <h1 className="text-[#62666B] m-4 text-sm font-medium ">Files</h1>
-              <div className="flex flex-col items-center flex-wrap mx-auto  md:grid md:grid-cols-2 lg:grid-cols-3">
-                <div className="flex col-span-1 justify-center m-5 items-center w-3/4 p-2 md:w-11/12">
+              <h1 className="text-[#62666B] mx-4 my-2 text-sm font-medium ">
+                Files
+              </h1>
+              <div className="flex flex-col items-center md:grid md:grid-cols-2 lg:grid-cols-3">
+                <div className="flex col-span-1 justify-center justify-self-center items-center rounded-md my-4 mx-2 w-5/6 sm:w-3/4">
                   <div className="group relative block overflow-hidden rounded-md transition-all duration-700">
-                    <figure className="border h-60 flex flex-row lg:flex-col lg:h-80">
+                    <figure className=" border h-36 sm:h-48 md:h-60 flex flex-row lg:flex-col lg:h-80">
                       <img
                         src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp"
-                        className="w-2/3 lg:w-full"
+                        className="w-1/2 sm:w-2/3 lg:w-full"
                         alt=""
                       />
-                      <figcaption className="border-t p-4 bg-white text-sm text-[#3C4043] font-medium">
+                      <figcaption className="border-t p-2 sm:p-4 bg-white text-sm text-[#3C4043] font-medium">
                         Ecommerce Web-app made using MERN stack
                       </figcaption>
                     </figure>
@@ -136,15 +125,15 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex col-span-1 justify-center m-5 items-center w-3/4 p-2 md:w-11/12">
+                <div className="flex col-span-1 justify-center justify-self-center items-center rounded-md my-4 mx-2 w-5/6 sm:w-3/4">
                   <div className="group relative block overflow-hidden rounded-md transition-all duration-700">
-                    <figure className="border h-60 flex flex-row lg:flex-col lg:h-80">
+                    <figure className="border h-36 sm:h-48 md:h-60 flex flex-row lg:flex-col lg:h-80">
                       <img
                         src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp"
-                        className="w-2/3 lg:w-full"
+                        className="w-1/2 sm:w-2/3 lg:w-full"
                         alt=""
                       />
-                      <figcaption className="border-t p-4 bg-white text-sm text-[#3C4043] font-medium">
+                      <figcaption className="border-t p-2 sm:p-4 bg-white text-sm text-[#3C4043] font-medium">
                         Ecommerce Web-app made using MERN stack
                       </figcaption>
                     </figure>
@@ -160,15 +149,15 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex col-span-1 justify-center m-5 items-center w-3/4 p-2 md:w-11/12">
+                <div className="flex col-span-1 justify-center justify-self-center items-center rounded-md my-4 mx-2 w-5/6 sm:w-3/4">
                   <div className="group relative block overflow-hidden rounded-md transition-all duration-700">
-                    <figure className="border h-60 flex flex-row lg:flex-col lg:h-80">
+                    <figure className="border h-36 sm:h-48 md:h-60 flex flex-row lg:flex-col lg:h-80">
                       <img
                         src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp"
-                        className="w-2/3 lg:w-full"
+                        className="w-1/2 sm:w-2/3 lg:w-full"
                         alt=""
                       />
-                      <figcaption className="border-t p-4 bg-white text-sm text-[#3C4043] font-medium">
+                      <figcaption className="border-t p-2 sm:p-4 bg-white text-sm text-[#3C4043] font-medium">
                         Ecommerce Web-app made using MERN stack
                       </figcaption>
                     </figure>
@@ -187,7 +176,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       )}
     </div>
   );

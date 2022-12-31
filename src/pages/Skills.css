@@ -1,22 +1,20 @@
 .slick-slide {
   height: 24rem;
-  border: 2px dashed rgb(55, 55, 55);
-  border-radius: 2%;
+  background: linear-gradient(10deg, #ffffff 0%,#b5fbfb  100%);
+  /* border: 2px solid rgb(69, 1, 255); */
+  border-radius: 10px;
+  margin: 0 2px;
 }
 .slick-track {
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
+  padding-top: 3rem !important;
+  padding-bottom:3rem !important;
   display: flex !important;
   align-items: center !important;
 }
 .slick-center {
-  background-color: white;
-  background-image: url("../assets/skill2.gif");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 2px dashed tomato;
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  transform: scale(1.1);
+  background: linear-gradient(10deg, #ffffff 0%, #7efafa 100%);
+  transition: 0.2s ease all;
+  -webkit-transform: scale(1.18);
+  -moz-transform: scale(1.18);
+  transform: scale(1.18);
 }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import Gmail from "../assets/gmail.png";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
@@ -7,6 +6,8 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import Navbar from "../layout/Navbar";
 import Loader from "../layout/Loader";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
   const {
@@ -50,38 +51,24 @@ const Contact = () => {
 
   const [show, setShow] = useState(false);
   useEffect(() => {
+    AOS.init();
     const timer = setTimeout(() => {
       setShow(true);
-    }, 4000);
+    }, 2500);
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="contact flex flex-col h-[calc(100vh_-_4rem)] overflow-y-auto  overflow-x-hidden w-screen items-center">
+    <div className="contact flex flex-col h-[calc(100vh_-_3rem)] md:h-[calc(100vh_-_4rem)] overflow-y-auto  overflow-x-hidden w-screen items-center">
       {!show ? (
-        <Loader />
+        <Loader title="Contact" />
       ) : (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            default: {
-              duration: 0.3,
-              ease: [0, 0.71, 0.2, 1.0],
-            },
-            scale: {
-              type: "spring",
-              damping: 5,
-              stiffness: 100,
-              restDelta: 0.001,
-            },
-          }}
-        >
-          <Navbar image={Gmail} title="Contact" search="contacts" />
-          <div className="flex h-full w-full bg-backgroundContact overflow-hidden bg-cover bg-bottom bg-no-repeat">
-            <div className="flex flex-col w-2/5 bg-[#3569D7] px-4 py-0 overflow-y-auto justify-center">
+        <div className="w-screen">
+          <Navbar image={Gmail} title="Contact" search="Contacts" />
+          <div data-aos="fade-left" data-aos-duration="1100" className="flex h-[calc(100vh_-_6.1rem)] sm:h-[calc(100vh_-_6.6rem)] md:h-[calc(100vh_-_7.8rem)]  w-full bg-backgroundContact overflow-hidden bg-cover bg-right-bottom sm:bg-center bg-no-repeat">
+            <div data-aos="fade-right" data-aos-duration="1300" className="flex flex-col w-full md:w-1/2 lg:w-2/5 h-3/5 sm:h-1/2 md:h-full fixed md:static bottom-0 bg-[#3569D7] px-4 py-2 sm:py-0 overflow-y-auto justify-center">
               <h1 className="text-white font-google text-2xl">Contact Me</h1>
               <div className="flex flex-col bg-white overflow-y-auto rounded-lg h-auto w-full ">
-                <div className="py-8 px-8">
+                <div className="p-4 md:p-8">
                   <form
                     onSubmit={handleSubmit(onSubmit)}
                     noValidate
@@ -94,7 +81,7 @@ const Contact = () => {
                       <input
                         type="text"
                         name="name"
-                        className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-[#3569D7] shadow-sm focus:ring-orange-400 focus:border-[#3569D7] "
+                        className="block p-1.5 sm:p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-[#3569D7] shadow-sm focus:ring-orange-400 focus:border-[#3569D7] "
                         placeholder="Let me know your name"
                         required
                         {...register("name", {
@@ -109,7 +96,7 @@ const Contact = () => {
                         })}
                       />
                       {errors.name && (
-                        <span className="errorMessage">
+                        <span className="errorMessage text-sm text-red-500 font-sans">
                           {errors.name.message}
                         </span>
                       )}
@@ -121,7 +108,7 @@ const Contact = () => {
                       <input
                         type="email"
                         name="email"
-                        className="shadow-sm bg-gray-50 border border-[#3569D7] text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                        className="shadow-sm bg-gray-50 border border-[#3569D7] text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-1.5 sm:p-2.5"
                         placeholder="Let me know your email id"
                         {...register("email", {
                           required: true,
@@ -130,13 +117,13 @@ const Contact = () => {
                         required
                       />
                       {errors.email && (
-                        <span className="errorMessage">
+                        <span className="errorMessage text-sm text-red-500 font-sans">
                           Please enter a valid email address
                         </span>
                       )}
                     </div>
                     <div>
-                      <label className="block mb-2 text-sm font-medium text-gray-900">
+                      <label className="block mb-1 md:mb-2 text-sm font-medium text-gray-900">
                         Your message
                       </label>
                       <textarea
@@ -145,13 +132,13 @@ const Contact = () => {
                           required: true,
                         })}
                         rows="4"
-                        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-[#3569D7] focus:ring-orange-600 focus:border-[#3569D7] "
+                        className="block p-1.5 sm:p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-[#3569D7] focus:ring-orange-600 focus:border-[#3569D7] "
                         placeholder="Leave your message"
                       ></textarea>
                     </div>
                     <button
                       type="submit"
-                      className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-orange-400  hover:bg-orange-500 "
+                      className="py-1 md:py-3 px-5 text-sm  text-center text-white rounded-lg bg-orange-400  hover:bg-orange-500 "
                     >
                       Submit
                     </button>
@@ -160,7 +147,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       )}
     </div>
   );
