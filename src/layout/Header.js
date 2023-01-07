@@ -3,14 +3,14 @@ import { IoMdClose, IoMdMic } from "react-icons/io";
 import { IoReload, IoExtensionPuzzle } from "react-icons/io5";
 import { HiPlus, HiLockClosed } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
-import P from "../assets/p-logo.png";
+import P from "../assets/p-logo.webp";
 import { MdExpandMore } from "react-icons/md";
-import Chrome from "../assets/chrome.png";
-import Photos from "../assets/googlePhotos.png";
-import Classroom from "../assets/googleClassroom.png";
-import Gmail from "../assets/gmail.png";
-import Drive from "../assets/drive.png";
-import News from "../assets/googleNews.png";
+import Chrome from "../assets/chrome.webp";
+import Photos from "../assets/googlePhotos.webp";
+import Classroom from "../assets/googleClassroom.webp";
+import Gmail from "../assets/gmail.webp";
+import Drive from "../assets/drive.webp";
+import News from "../assets/googleNews.webp";
 import { FaRegShareSquare } from "react-icons/fa";
 import {
   VscChromeMinimize,
@@ -27,7 +27,7 @@ import { CgDockRight } from "react-icons/cg";
 import { useNavigate, NavLink } from "react-router-dom";
 
 const Header = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const refresh = () => {
     window.location.reload(false);
   };
@@ -139,15 +139,21 @@ const Header = () => {
         </ul>
       </div>
       <div className="flex w-screen bg-[#303134] h-full md:h-9 justify-center items-center py-1 text-white ">
-        <ul className="flex items-center justify-between">
-          <li className="hidden md:block px-2 text-[#a2a2a2]" onClick={()=>navigate(-1)}>
+        <ul className="flex items-center justify-between pl-1">
+          <li
+            className="hidden md:block text-sm p-1 hover:bg-[#676767] transition-all rounded-2xl"
+            onClick={() => navigate(-1)}
+          >
             <VscArrowLeft />
           </li>
-          <li className="hidden md:block px-2 text-[#a2a2a2]" onClick={()=>navigate(+1)}>
+          <li
+            className="hidden md:block text-sm p-1 hover:bg-[#676767] transition-all rounded-2xl"
+            onClick={() => navigate(+1)}
+          >
             <VscArrowRight />
           </li>
           <li
-            className="hidden md:block text-sm p-1 hover:bg-[#676767] rounded-2xl"
+            className="hidden md:block text-sm p-1 hover:bg-[#676767] transition-all rounded-2xl"
             onClick={refresh}
           >
             <IoReload />

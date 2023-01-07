@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Classroom from "../assets/googleClassroom.png";
+import Classroom from "../assets/googleClassroom.webp";
 import { Tab } from "@headlessui/react";
 import Navbar from "../layout/Navbar";
 import Loader from "../layout/Loader";

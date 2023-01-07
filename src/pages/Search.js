@@ -1,22 +1,22 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
 import ProfileImage from "../assets/profile.webp";
-import ProfileImage2 from "../assets/aboutImage.png";
+import ProfileImage2 from "../assets/aboutImage.webp";
 import { IoMdClose } from "react-icons/io";
 import { AiOutlineSetting } from "react-icons/ai";
 import { BiDotsVerticalRounded, BiImage, BiNews } from "react-icons/bi";
 import { BsFilePlay } from "react-icons/bs";
 import { TfiBookmarkAlt } from "react-icons/tfi";
-import SearchIcon from "../assets/search.png";
+import SearchIcon from "../assets/search.webp";
 import Namaste from "../assets/namaste-covid.gif";
 import { NavLink } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { FiChevronDown } from "react-icons/fi";
-import Github from "../assets/githubLink.png";
+import Github from "../assets/githubLink.webp";
 import { Dialog, Transition } from "@headlessui/react";
-import Gmail from "../assets/gmail.png";
-import Linked from "../assets/linkedin.png";
-import Instagram from "../assets/instagram.png";
+import Gmail from "../assets/gmail.webp";
+import Linked from "../assets/linkedin.webp";
+import Instagram from "../assets/instagram.webp";
 import Sidebar from "../layout/Sidebar";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -34,9 +34,12 @@ const Search = () => {
     AOS.init();
   }, []);
   return (
-    <div className="flex flex-col h-[calc(100vh-4rem)] overflow-x-hidden min-h-full w-screen overflow-y-auto">
-      <nav data-aos="fade-down" className="flex flex-col sticky bg-white z-10 top-0 sm:px-1 md:px-10 lg:px-256 pt-4 pb-2 h-auto w-full items-center justify-between text-[#4D5156] border-b border-gray-300 ">
-        <div className="flex w-full justify-between ">
+    <div className="flex flex-col h-[calc(100vh_-_3rem)] md:h-[calc(100vh_-_4rem)] overflow-x-hidden w-screen overflow-y-auto">
+      <nav
+        data-aos="fade-down"
+        className="flex flex-col sticky bg-white z-10 top-0 sm:px-1 md:px-10 lg:px-256 pt-4 pb-2 h-auto w-full items-center justify-between text-[#4D5156] border-b border-gray-300 "
+      >
+        <div className="flex w-full justify-between md:pl-10">
           <div className="flex sm:flex-row flex-col w-full items-center justify-start sm:w-3/4 md:4/5">
             <div className="flex items-center justify-between w-full mb-5 px-5 sm:px-0 sm:mb-0 sm:w-auto">
               <div className="block sm:hidden">
@@ -68,7 +71,7 @@ const Search = () => {
               </button>
             </div>
           </div>
-          <ul className="hidden sm:flex items-center ">
+          <ul className="hidden sm:flex items-center">
             <li className="mr-3 text-base cursor-pointer hover:underline">
               <AiOutlineSetting className="text-[#5F6368] text-2xl font-bold" />
             </li>
@@ -104,12 +107,16 @@ const Search = () => {
                         <Dialog.Panel className="w-2/5 sm:w-1/5 md:w-1/6 transform rounded-lg p-1 md:p-2 bg-white shadow-xl transition-all">
                           <Dialog.Title
                             as="h3"
+                            data-aos="fade-down"
+                            data-aos-duration="1500"
                             className="hidden md:flex font-google font-semibold justify-center md:text-xs lg:text-xl text-gray-600"
                           >
                             My Socials
                           </Dialog.Title>
                           <div className=" grid grid-cols-2  items-center h-full">
                             <a
+                              data-aos="fade-down"
+                              data-aos-duration="1100"
                               className=" w-full md:p-3 flex flex-col items-center justify-center focus:outline-none"
                               href="https://mail.google.com/mail/?view=cm&to=pranjayvats22062001@gmail.com"
                             >
@@ -123,6 +130,8 @@ const Search = () => {
                               </p>
                             </a>
                             <a
+                              data-aos="fade-down"
+                              data-aos-duration="1200"
                               className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                               href="https://www.linkedin.com/in/pranjay-vats-4bb250205/"
                             >
@@ -136,6 +145,8 @@ const Search = () => {
                               </p>
                             </a>
                             <a
+                              data-aos="fade-down"
+                              data-aos-duration="1300"
                               className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none "
                               href="https://github.com/PranjayVats"
                             >
@@ -149,6 +160,8 @@ const Search = () => {
                               </p>
                             </a>
                             <a
+                              data-aos="fade-down"
+                              data-aos-duration="1400"
                               className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                               href="https://www.instagram.com/vatspranjay.2206/"
                             >
@@ -178,7 +191,7 @@ const Search = () => {
             </li>
           </ul>
         </div>
-        <div className="flex w-full mt-5">
+        <div className="flex w-full mt-5 md:pl-6">
           <ul className="flex px-3 sm:px-0 items-center w-full lg:w-3/5 justify-around text-xs md:text-sm">
             <li className="flex items-center font-medium cursor-pointer hover:text-blue-600">
               <img
@@ -214,15 +227,19 @@ const Search = () => {
           </ul>
         </div>
       </nav>
-      <div data-aos="fade-down" data-aos-duration="1100" className="px-5 lg:px-512 mt-2">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="1100"
+        className="px-5 lg:px-512 mt-2"
+      >
         <h3 className="text-[#787D82] text-sm">
           About 1,40,00,605 results (0.01 seconds)
         </h3>
         <h1 className="font-sans mt-5 text-2xl text-[#202124]">
           Pranjay Vats' Portfolio
         </h1>
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-5 lg:divide-x text-black h-full mt-4 ">
-          <div className="searchRelated col-span-3 pr-10">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-5 lg:divide-x text-black my-5">
+          <div className="col-span-3 lg:pr-10">
             <div className="flex flex-col">
               <NavLink to="/projects" className="flex flex-col group ">
                 <span className="flex text-sm items-center">
@@ -238,7 +255,7 @@ const Search = () => {
                   It is fully fledge Ecommerce website with Payment method also.
                 </p>
               </NavLink>
-              <h2 className="text-lg sm:text-xl md:text-2xl mt-10">
+              <h2 className="text-lg sm:text-xl md:text-2xl mt-10 mb-4">
                 People also ask
               </h2>
               <Disclosure>
@@ -254,13 +271,13 @@ const Search = () => {
                         } text-xl text-[#70757A]`}
                       />
                     </Disclosure.Button>
-                    <Disclosure.Panel className="pb-2 text-sm text-gray-500">
+                    <Disclosure.Panel className="pb-2">
                       <NavLink to="/education" className="flex flex-col group">
-                        <p className="text-xs sm:text-sm text-[#65696E]">
+                        <p className="text-sm sm:text-base">
                           Bachelor Of Technology in Computer Science Engineering
                           - Percentage(88.71%) ...
                         </p>
-                        <span className="flex text-sm items-center mt-2">
+                        <span className="flex text-sm items-center mt-2 text-gray-500">
                           https://en.wikipedia.org › wiki › Education{" "}
                           <BiDotsVerticalRounded className="text-base ml-7" />
                         </span>
@@ -288,13 +305,13 @@ const Search = () => {
                         } text-xl text-[#70757A]`}
                       />
                     </Disclosure.Button>
-                    <Disclosure.Panel className="pb-2 text-sm text-gray-500">
+                    <Disclosure.Panel className="pb-2">
                       <NavLink to="/skills" className="flex flex-col group">
-                        <p className="text-xs sm:text-sm text-[#65696E]">
+                        <p className="text-sm sm:text-base">
                           Programming - C/C++, Frontend - React, Javascript,
                           HTML & CSS, ...
                         </p>
-                        <span className="flex text-sm items-center mt-2">
+                        <span className="flex text-sm items-center mt-2 text-gray-500">
                           https://en.wikipedia.org › wiki › Skills{" "}
                           <BiDotsVerticalRounded className="text-base ml-7" />
                         </span>
@@ -310,7 +327,7 @@ const Search = () => {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className="flex text-sm sm:text-base w-full justify-between border-t  border-gray-300 
+                      className="flex text-sm sm:text-base w-full justify-between border-t border-gray-300 
                       py-2 font-medium focus:outline-none "
                     >
                       <span className="text-left">
@@ -322,9 +339,9 @@ const Search = () => {
                         } text-xl text-[#70757A]`}
                       />
                     </Disclosure.Button>
-                    <Disclosure.Panel className="pb-2 text-sm text-gray-500 border-gray-300 ">
+                    <Disclosure.Panel className="pb-2 ">
                       <NavLink to="./contact" className="flex flex-col group">
-                        <p className="text-xs sm:text-sm text-[#65696E]">
+                        <p className=" text-sm sm:text-base">
                           Gmail Id: pranjayvats22062001@gmail.com , ...
                         </p>
                         <span className="flex text-sm items-center mt-2">
@@ -339,7 +356,7 @@ const Search = () => {
                   </>
                 )}
               </Disclosure>
-              <hr></hr>
+              <hr className="border-gray-300" />
               <NavLink to="/education" className="flex flex-col group mt-8">
                 <span className="flex text-sm items-center">
                   https://en.wikipedia.org › wiki › Education{" "}
@@ -380,9 +397,9 @@ const Search = () => {
               </NavLink>
             </div>
           </div>
-          <div className="about lg:pl-10 col-span-2 mb-5">
-            <h1 className="text-2xl">About</h1>
-            <div className="about flex flex-col mt-5">
+          <div className="col-span-2 lg:pl-10 ">
+            <h1 className="text-xl">About</h1>
+            <div className="about flex flex-col mt-3">
               <span className="flex items-center">
                 Hey everyone!
                 <img src={Namaste} className="w-12 mr-1" alt="namaste" />
@@ -396,10 +413,9 @@ const Search = () => {
                 My name is Pranjay Vats and I am pursuing my Bachelor in
                 Technology from Dr. Akhilesh Das Gupta Institute of Technology &
                 Management and my specialization is in Computer Science
-                Engineering.
-                I have a deep interest in Web Development and especially in
-                frontend development and I have made some full stack projects
-                using React & Node js.
+                Engineering. I have a deep interest in Web Development and
+                especially in frontend development and I have made some full
+                stack projects using React & Node js.
               </p>
               <NavLink to="/about" className="text-[#1A0DAB] ">
                 Read more...

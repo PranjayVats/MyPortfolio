@@ -4,10 +4,10 @@ import { AiOutlineSetting, AiOutlineSearch } from "react-icons/ai";
 import { CgMenuGridO } from "react-icons/cg";
 import ProfileImage from "../assets/profile.webp";
 import { Dialog, Transition } from "@headlessui/react";
-import Github from "../assets/githubLink.png";
-import Gmail from "../assets/gmail.png";
-import Linked from "../assets/linkedin.png";
-import Instagram from "../assets/instagram.png";
+import Github from "../assets/githubLink.webp";
+import Gmail from "../assets/gmail.webp";
+import Linked from "../assets/linkedin.webp";
+import Instagram from "../assets/instagram.webp";
 import Sidebar from "./Sidebar";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -20,18 +20,26 @@ const Navbar = (props) => {
   function openModal() {
     setIsOpen(true);
   }
-  useEffect(()=>{
+  useEffect(() => {
     AOS.init();
-  },[]);
+  }, []);
   return (
-    <nav data-aos="fade-down" data-aos-duration="1100"  className="flex sticky bg-white z-40 top-0 px-5 h-auto w-screen items-center justify-between py-2 border-b border-gray-300 ">
+    <nav
+      data-aos="fade-down"
+      data-aos-duration="1100"
+      className="flex sticky bg-white z-40 top-0 px-5 h-auto w-screen items-center justify-between py-2 border-b border-gray-300 "
+    >
       <div className="flex items-center justify-between md:justify-start w-full md:w-4/5">
         <div className="flex items-center md:hidden">
           <Sidebar />
         </div>
         <figure className="flex justify-between items-center text-[#5F6368] text-xl font-google md:mr-10">
-          <img src={props.image} className="w-6
-           sm:w-10 mr-2" alt="drive-Logo" />
+          <img
+            src={props.image}
+            className="w-6
+           sm:w-10 mr-2"
+            alt="drive-Logo"
+          />
           <figcaption>{props.title}</figcaption>
         </figure>
         <div className="hidden md:flex items-center justify-between px-5 py-2 my-0.5 rounded-lg w-4/6 lg:w-1/2 bg-[#F1F3F4]">
@@ -86,12 +94,16 @@ const Navbar = (props) => {
                     <Dialog.Panel className="w-2/5 sm:w-1/5 md:w-1/6 transform rounded-lg p-1 md:p-2 bg-white shadow-xl transition-all">
                       <Dialog.Title
                         as="h3"
+                        data-aos="fade-down"
+                        data-aos-duration="1500"
                         className="hidden md:flex font-google font-semibold justify-center md:text-xs lg:text-xl text-gray-600"
                       >
                         My Socials
                       </Dialog.Title>
                       <div className=" grid grid-cols-2  items-center h-full">
                         <a
+                          data-aos="fade-down"
+                          data-aos-duration="1100"
                           className=" w-full md:p-3 flex flex-col items-center justify-center focus:outline-none"
                           href="https://mail.google.com/mail/?view=cm&to=pranjayvats22062001@gmail.com"
                         >
@@ -105,6 +117,8 @@ const Navbar = (props) => {
                           </p>
                         </a>
                         <a
+                          data-aos="fade-down"
+                          data-aos-duration="1200"
                           className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                           href="https://www.linkedin.com/in/pranjay-vats-4bb250205/"
                         >
@@ -118,6 +132,8 @@ const Navbar = (props) => {
                           </p>
                         </a>
                         <a
+                          data-aos="fade-down"
+                          data-aos-duration="1300"
                           className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none "
                           href="https://github.com/PranjayVats"
                         >
@@ -131,6 +147,8 @@ const Navbar = (props) => {
                           </p>
                         </a>
                         <a
+                          data-aos="fade-down"
+                          data-aos-duration="1400"
                           className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                           href="https://www.instagram.com/vatspranjay.2206/"
                         >

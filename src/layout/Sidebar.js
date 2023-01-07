@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MdClose,
   MdMenu,
@@ -10,13 +10,18 @@ import {
   MdOutlineMenuBook,
 } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import Github from "../assets/githubLink.png";
-import Gmail from "../assets/gmail.png";
-import Linked from "../assets/linkedin.png";
-import Instagram from "../assets/instagram.png";
+import Github from "../assets/githubLink.webp";
+import Gmail from "../assets/gmail.webp";
+import Linked from "../assets/linkedin.webp";
+import Instagram from "../assets/instagram.webp";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <div className="flex items-center text-center">
@@ -25,7 +30,7 @@ const Sidebar = () => {
         </button>
       </div>
       {open ? (
-        <div className="fixed z-100 h-full items-center top-[3rem] left-0 p-4 overflow-y-auto bg-white w-2/3 sm:w-1/2">
+        <div className="fixed z-100 h-[calc(100vh_-_3rem)] md:h-[calc(100vh_-_4rem)] items-center top-[3rem] left-0 p-4 overflow-y-auto bg-white w-2/3 sm:w-1/2">
           <h5 className="text-base sm:text-lg font-semibold text-gray-500 uppercase ">
             Menu
           </h5>
@@ -38,25 +43,25 @@ const Sidebar = () => {
           </button>
           <div className="py-4">
             <ul className="text-lg sm:text-xl font-google text-gray-500 mb-5">
-              <li className="hover:animate-myAnim">
+              <li data-aos="fade-right" data-aos-duration="1100">
                 <NavLink className="flex items-center px-2 w-5/6" to="/">
                   <MdHome className="mr-4" />
                   Home
                 </NavLink>
               </li>
-              <li className="hover:animate-myAnim">
+              <li data-aos="fade-right" data-aos-duration="1200">
                 <NavLink className="flex items-center px-2 w-5/6" to="/about">
                   <MdAccountCircle className="mr-4" />
                   About
                 </NavLink>
               </li>
-              <li className="hover:animate-myAnim">
+              <li data-aos="fade-right" data-aos-duration="1300">
                 <NavLink className="flex items-center px-2 w-5/6" to="/projects">
                   <MdPermMedia className="mr-4" />
                   Projects
                 </NavLink>
               </li>
-              <li className="hover:animate-myAnim">
+              <li data-aos="fade-right" data-aos-duration="1400">
                 <NavLink
                   className="flex items-center px-2 w-5/6"
                   to="/education"
@@ -65,13 +70,13 @@ const Sidebar = () => {
                   Education
                 </NavLink>
               </li>
-              <li className="hover:animate-myAnim">
+              <li data-aos="fade-right" data-aos-duration="1500">
                 <NavLink className="flex items-center px-2 w-5/6" to="/skills">
                   <MdHotelClass className="mr-4" />
                   Skills
                 </NavLink>
               </li>
-              <li className="hover:animate-myAnim">
+              <li data-aos="fade-right" data-aos-duration="1600">
                 <NavLink className="flex items-center px-2 w-5/6" to="/contact">
                   <MdMarkAsUnread className="mr-4" />
                   Contact
@@ -79,9 +84,10 @@ const Sidebar = () => {
               </li>
             </ul>
             <hr />
-            <h2 className="font-google text-lg justify-center text-gray-600 px-2 mt-5">My Socials</h2>
+            <h2 data-aos="fade-right" data-aos-duration="1500" className="font-google text-lg justify-center text-gray-600 px-2 mt-5">My Socials</h2>
             <div className=" grid grid-cols-2 items-center w-full sm:w-4/5">
               <a
+              data-aos="fade-right" data-aos-duration="1100" 
                 className=" w-full md:p-3 flex flex-col items-center justify-center focus:outline-none"
                 href="https://mail.google.com/mail/?view=cm&to=pranjayvats22062001@gmail.com"
               >
@@ -95,6 +101,7 @@ const Sidebar = () => {
                 </p>
               </a>
               <a
+              data-aos="fade-right" data-aos-duration="1200" 
                 className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                 href="https://www.linkedin.com/in/pranjay-vats-4bb250205/"
               >
@@ -108,6 +115,7 @@ const Sidebar = () => {
                 </p>
               </a>
               <a
+              data-aos="fade-right" data-aos-duration="1300" 
                 className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none "
                 href="https://github.com/PranjayVats"
               >
@@ -121,6 +129,7 @@ const Sidebar = () => {
                 </p>
               </a>
               <a
+              data-aos="fade-right" data-aos-duration="1400" 
                 className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                 href="https://www.instagram.com/vatspranjay.2206/"
               >

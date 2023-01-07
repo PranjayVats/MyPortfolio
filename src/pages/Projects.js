@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Drive from "../assets/drive.png";
+import Drive from "../assets/drive.webp";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoStarOutline } from "react-icons/io5";
 import { GoTriangleRight, GoTriangleDown } from "react-icons/go";
@@ -11,7 +11,7 @@ import {
   MdOutlineViewList,
   MdInfoOutline,
 } from "react-icons/md";
-import AddIcon from "../assets/addIcon.jpg";
+import AddIcon from "../assets/addIcon.webp";
 import { FaGoogleDrive } from "react-icons/fa";
 import Navbar from "../layout/Navbar";
 import Loader from "../layout/Loader";

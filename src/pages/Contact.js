@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Gmail from "../assets/gmail.png";
+import Gmail from "../assets/gmail.webp";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -58,7 +58,7 @@ const Contact = () => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="contact flex flex-col h-[calc(100vh_-_3rem)] md:h-[calc(100vh_-_4rem)] overflow-y-auto  overflow-x-hidden w-screen items-center">
+    <div className="flex flex-col h-[calc(100vh_-_3rem)] md:h-[calc(100vh_-_4rem)] overflow-y-auto overflow-x-hidden w-screen items-center">
       {!show ? (
         <Loader title="Contact" />
       ) : (

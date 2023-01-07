@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ProfileImage2 from "../assets/aboutImage2.jpg";
+import ProfileImage2 from "../assets/aboutImage2.webp";
 import Namaste from "../assets/namaste-covid.gif";
 import GoogleCloud from "../assets/googleCloud.svg";
-import Photos from "../assets/googlePhotos.png";
+import Photos from "../assets/googlePhotos.webp";
 import Loader from "../layout/Loader";
 import Navbar from "../layout/Navbar";
 import AOS from "aos";

@@ -1,5 +1,5 @@
 import React from "react";
-import P from "../assets/p-logo.png";
+import P from "../assets/p-logo.webp";
 
 const Loader = (props) => {
   return (

@@ -13,7 +13,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Error404 from "./pages/Error404";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import Navbar from "./layout/Navbar";
 
 function App() {
   useEffect(() => {
@@ -35,7 +34,6 @@ function App() {
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/education" element={<Education />}></Route>
           <Route path="/projects" element={<Projects />}></Route>
-          <Route path="/temp" element={<Navbar />}></Route>
           <Route path="*" element={<Error404 />}>
           </Route>
         </Routes>

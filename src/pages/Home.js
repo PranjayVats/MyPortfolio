@@ -7,10 +7,10 @@ import ProfileImage from "../assets/profile.webp";
 import "./Home.css";
 import Typewriter from "typewriter-effect";
 import { NavLink, useNavigate } from "react-router-dom";
-import Github from "../assets/githubLink.png";
-import Gmail from "../assets/gmail.png";
-import Linked from "../assets/linkedin.png";
-import Instagram from "../assets/instagram.png";
+import Github from "../assets/githubLink.webp";
+import Gmail from "../assets/gmail.webp";
+import Linked from "../assets/linkedin.webp";
+import Instagram from "../assets/instagram.webp";
 import { Dialog, Transition } from "@headlessui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -85,12 +85,16 @@ const Home = () => {
                         <Dialog.Panel className="w-2/5 sm:w-1/5 md:w-1/6 transform rounded-lg p-1 md:p-2 bg-white shadow-xl transition-all">
                           <Dialog.Title
                             as="h3"
+                            data-aos="fade-down"
+                            data-aos-duration="1500"
                             className="hidden md:flex font-google font-semibold justify-center md:text-xs lg:text-xl text-gray-600"
                           >
                             My Socials
                           </Dialog.Title>
                           <div className=" grid grid-cols-2  items-center h-full">
                             <a
+                              data-aos="fade-down"
+                              data-aos-duration="1100"
                               className=" w-full md:p-3 flex flex-col items-center justify-center focus:outline-none"
                               href="https://mail.google.com/mail/?view=cm&to=pranjayvats22062001@gmail.com"
                             >
@@ -104,6 +108,8 @@ const Home = () => {
                               </p>
                             </a>
                             <a
+                              data-aos="fade-down"
+                              data-aos-duration="1200"
                               className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                               href="https://www.linkedin.com/in/pranjay-vats-4bb250205/"
                             >
@@ -117,6 +123,8 @@ const Home = () => {
                               </p>
                             </a>
                             <a
+                              data-aos="fade-down"
+                              data-aos-duration="1300"
                               className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none "
                               href="https://github.com/PranjayVats"
                             >
@@ -130,6 +138,8 @@ const Home = () => {
                               </p>
                             </a>
                             <a
+                              data-aos="fade-down"
+                              data-aos-duration="1400"
                               className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                               href="https://www.instagram.com/vatspranjay.2206/"
                             >
