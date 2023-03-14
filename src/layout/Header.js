@@ -41,7 +41,12 @@ const Header = () => {
               className="flex text-xs items-center px-2 h-full justify-between w-24 lg:w-28"
             >
               <figure className="flex items-center">
-                <img className="w-3.5 mr-1" src={Chrome} alt="logo" />
+                <img
+                  loading="lazy"
+                  className="w-3.5 mr-1"
+                  src={Chrome}
+                  alt="logo"
+                />
                 <figcaption>Home</figcaption>
               </figure>
               <IoMdClose className="text-sm" />
@@ -53,7 +58,7 @@ const Header = () => {
               className="flex text-xs items-center px-2 h-full justify-between w-24 lg:w-28"
             >
               <figure className="flex items-center">
-                <img className="w-3.5 mr-1" src={P} alt="logo" />
+                <img loading="lazy" className="w-3.5 mr-1" src={P} alt="logo" />
                 <figcaption>Pranjay...</figcaption>
               </figure>
               <IoMdClose className="text-sm" />
@@ -65,7 +70,12 @@ const Header = () => {
               className="flex text-xs items-center px-2 h-full justify-between w-24 lg:w-28"
             >
               <figure className="flex items-center">
-                <img className="w-3.5 mr-1" src={Photos} alt="logo" />
+                <img
+                  loading="lazy"
+                  className="w-3.5 mr-1"
+                  src={Photos}
+                  alt="logo"
+                />
                 <figcaption>About</figcaption>
               </figure>
               <IoMdClose className="text-sm" />
@@ -77,7 +87,12 @@ const Header = () => {
               className="flex text-xs items-center px-2 h-full justify-between w-24 lg:w-28"
             >
               <figure className="flex items-center">
-                <img className="w-3.5 mr-1" src={Drive} alt="logo" />
+                <img
+                  loading="lazy"
+                  className="w-3.5 mr-1"
+                  src={Drive}
+                  alt="logo"
+                />
                 <figcaption>Projects</figcaption>
               </figure>
               <IoMdClose className="text-sm" />
@@ -89,7 +104,12 @@ const Header = () => {
               className="flex text-xs items-center px-2 h-full justify-between w-24 lg:w-28"
             >
               <figure className="flex items-center">
-                <img className="w-3.5 mr-1" src={Classroom} alt="logo" />
+                <img
+                  loading="lazy"
+                  className="w-3.5 mr-1"
+                  src={Classroom}
+                  alt="logo"
+                />
                 <figcaption className="truncate">Education</figcaption>
               </figure>
               <IoMdClose className="text-sm" />
@@ -101,7 +121,12 @@ const Header = () => {
               className="flex text-xs items-center px-2 h-full justify-between w-24 lg:w-28"
             >
               <figure className="flex items-center">
-                <img className="w-3.5 mr-1" src={News} alt="logo" />
+                <img
+                  loading="lazy"
+                  className="w-3.5 mr-1"
+                  src={News}
+                  alt="logo"
+                />
                 <figcaption>Skills</figcaption>
               </figure>
               <IoMdClose className="text-sm" />
@@ -113,13 +138,18 @@ const Header = () => {
               className="flex text-xs items-center px-2 h-full justify-between w-24 lg:w-28"
             >
               <figure className="flex items-center">
-                <img className="w-3.5 mr-1" src={Gmail} alt="logo" />
+                <img
+                  loading="lazy"
+                  className="w-3.5 mr-1"
+                  src={Gmail}
+                  alt="logo"
+                />
                 <figcaption>Contact</figcaption>
               </figure>
               <IoMdClose className="text-sm" />
             </NavLink>
           </li>
-          <li className="items-center text-lg hover:bg-[#303134] rounded-2xl p-1 ">
+          <li className="items-center text-lg p-1 ">
             <HiPlus />
           </li>
         </ul>
@@ -158,7 +188,7 @@ const Header = () => {
           >
             <IoReload />
           </li>
-          <li className="md:hidden text-sm p-1 mx-2 hover:bg-[#676767] rounded-2xl">
+          <li className="md:hidden text-sm p-1 mx-2">
             <RiHome2Line />
           </li>
         </ul>
@@ -177,19 +207,19 @@ const Header = () => {
           </div>
         </div>
         <ul className="flex items-center justify-between">
-          <li className="hidden md:block text-sm p-1 mx-1 text-white hover:bg-[#676767] rounded-2xl">
+          <li className="hidden md:block text-sm p-1 mx-1 text-white">
             <IoExtensionPuzzle />
           </li>
-          <li className="flex md:hidden text-sm p-1 mx-1 text-white hover:bg-[#676767] rounded-2xl">
+          <li className="flex md:hidden text-sm p-1 mx-1 text-white">
             <IoMdMic />
           </li>
-          <li className="hidden md:block text-sm p-1 mx-2 text-white hover:bg-[#676767] rounded-2xl">
+          <li className="hidden md:block text-sm p-1 mx-2 text-white">
             <CgDockRight />
           </li>
-          <li className="flex md:hidden text-sm p-1 mx-1 text-white hover:bg-[#676767] rounded-2xl">
+          <li className="flex md:hidden text-sm p-1 mx-1 text-white">
             <TbSquare1 className="text-white" />
           </li>
-          <li className="text-sm p-1 mx-2 text-white hover:bg-[#676767] rounded-2xl">
+          <li className="text-sm p-1 mx-2 text-white">
             <BiDotsVerticalRounded />
           </li>
         </ul>

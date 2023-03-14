@@ -30,22 +30,42 @@ const About = () => {
             search="Photos"
           />
           <div className=" h-[calc(100vh_-_6.1rem)] sm:h-[calc(100vh_-_6.6rem)] md:h-[calc(100vh_-_7.8rem)] flex flex-col mt-6 md:mt-0 md:grid grid-cols-3 items-center md:divide-x sm:divide-orange-400 md:gap-10 md:gap-x-10">
-            <div data-aos="fade-right" data-aos-duration="1500" className="hidden md:flex flex-col items-end p-1 col-span-1">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1500"
+              className="hidden md:flex flex-col items-end p-1 col-span-1"
+            >
               <img
                 src={ProfileImage2}
+                loading="lazy"
                 className="w-4/5 border-orange-400 border-8 border-double mt-4 md:mt-10"
                 alt="profileImage"
-              ></img>
+              />
             </div>
-            <div data-aos="fade-left" data-aos-duration="1500" className="flex flex-col col-span-2 px-4 sm:px-10 font-google xs:text-lg sm:text-xl font-medium text-[#676767] ">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              className="flex flex-col col-span-2 px-4 sm:px-10 font-google xs:text-lg sm:text-xl font-medium text-[#676767] "
+            >
               <span className="flex items-center ">
-                <img src={Namaste} className="w-12 mr-1" alt="namaste" />
+                <img
+                  src={Namaste}
+                  className="w-12 mr-1"
+                  alt="namaste"
+                  loading="lazy"
+                />
                 Hey everyone!
-                <img src={Namaste} className="w-12 mr-1" alt="namaste" />
+                <img
+                  src={Namaste}
+                  className="w-12 mr-1"
+                  alt="namaste"
+                  loading="lazy"
+                />
               </span>
               <p className="mt-2 sm:mt-5 text-justify">
                 <img
                   src={ProfileImage2}
+                  loading="lazy"
                   className="block float-right w-2/5 sm:w-1/4 m-4 mt-3 mr-0 md:hidden"
                   alt="profileImage"
                 />
@@ -69,14 +89,15 @@ const About = () => {
               </p>
               <a
                 className="flex rounded-3xl w-2/3 sm:w-1/4 justify-between border border-orange-500 items-center p-2 animate-bounce mt-8"
-                href="./MyResume.pdf"
-                download
-                target="_blank" rel="noreferrer"
+                href="https://drive.google.com/file/d/1QUN4yeR0PTR5z56EaAlRFRoeafOL4zQj/view"
+                target="_blank"
+                rel="noreferrer"
               >
                 <figure className="flex w-auto text-lg justify-center m-auto">
                   <img
                     src={GoogleCloud}
                     alt="googlecloud"
+                    loading="lazy"
                     className="w-1/5 sm:1/6 mr-1"
                   />
                   <figcaption className="flex">My Resume</figcaption>

@@ -56,7 +56,10 @@ const Sidebar = () => {
                 </NavLink>
               </li>
               <li data-aos="fade-right" data-aos-duration="1300">
-                <NavLink className="flex items-center px-2 w-5/6" to="/projects">
+                <NavLink
+                  className="flex items-center px-2 w-5/6"
+                  to="/projects"
+                >
                   <MdPermMedia className="mr-4" />
                   Projects
                 </NavLink>
@@ -84,14 +87,22 @@ const Sidebar = () => {
               </li>
             </ul>
             <hr />
-            <h2 data-aos="fade-right" data-aos-duration="1500" className="font-google text-lg justify-center text-gray-600 px-2 mt-5">My Socials</h2>
+            <h2
+              data-aos="fade-right"
+              data-aos-duration="1500"
+              className="font-google text-lg justify-center text-gray-600 px-2 mt-5"
+            >
+              My Socials
+            </h2>
             <div className=" grid grid-cols-2 items-center w-full sm:w-4/5">
               <a
-              data-aos="fade-right" data-aos-duration="1100" 
+                data-aos="fade-right"
+                data-aos-duration="1100"
                 className=" w-full md:p-3 flex flex-col items-center justify-center focus:outline-none"
                 href="https://mail.google.com/mail/?view=cm&to=pranjayvats22062001@gmail.com"
               >
                 <img
+                  loading="lazy"
                   src={Gmail}
                   className="w-3/5 hover:shadow-2xl p-1 rounded-3xl"
                   alt=""
@@ -101,11 +112,13 @@ const Sidebar = () => {
                 </p>
               </a>
               <a
-              data-aos="fade-right" data-aos-duration="1200" 
+                data-aos="fade-right"
+                data-aos-duration="1200"
                 className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                 href="https://www.linkedin.com/in/pranjay-vats-4bb250205/"
               >
                 <img
+                  loading="lazy"
                   src={Linked}
                   className="w-3/5 hover:shadow-2xl p-1 rounded-3xl"
                   alt=""
@@ -115,11 +128,13 @@ const Sidebar = () => {
                 </p>
               </a>
               <a
-              data-aos="fade-right" data-aos-duration="1300" 
+                data-aos="fade-right"
+                data-aos-duration="1300"
                 className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none "
                 href="https://github.com/PranjayVats"
               >
                 <img
+                  loading="lazy"
                   src={Github}
                   className="w-3/5 hover:shadow-2xl p-1 rounded-3xl"
                   alt=""
@@ -129,11 +144,13 @@ const Sidebar = () => {
                 </p>
               </a>
               <a
-              data-aos="fade-right" data-aos-duration="1400" 
+                data-aos="fade-right"
+                data-aos-duration="1400"
                 className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
                 href="https://www.instagram.com/vatspranjay.2206/"
               >
                 <img
+                  loading="lazy"
                   src={Instagram}
                   className="w-3/5 hover:shadow-2xl p-1 rounded-3xl"
                   alt=""

@@ -18,13 +18,14 @@ module.exports = {
       },
       animation: {
         myAnim: "myAnimation 0.7s ease 0s 1 normal forwards",
-        preloader: "preloader 4s normal forwards",
+        preloader: "preloader 2.5s normal forwards",
       },
       spacing: {
         128: "3rem",
         256: "4rem",
         512: "6.5rem",
         1024: "30rem",
+        2048:"35rem"
       },
       boxShadow: {
         customShadow: "0 3px 8px rgba(33, 33, 33, 0.2)",

@@ -105,6 +105,7 @@ const Education = () => {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     src={Gif1}
                     className="hidden  md:block w-2/5 h-full"
                     alt=""
@@ -142,6 +143,7 @@ const Education = () => {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     src={Gif2}
                     className="hidden  md:block w-2/5 h-full"
                     alt=""
@@ -183,6 +185,7 @@ const Education = () => {
                     </div>
                   </div>
                   <img
+                    loading="lazy"
                     src={Gif3}
                     className="hidden  md:block w-2/5 h-full"
                     alt=""

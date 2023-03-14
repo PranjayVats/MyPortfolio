@@ -34,13 +34,13 @@ const Skills = () => {
         heading: "Programming Languages",
         title: "C",
         url: cIcon,
-        link: "https://www.w3schools.com/c/c_intro.php"
+        link: "https://www.w3schools.com/c/c_intro.php",
       },
       {
         id: 2,
         title: "C++",
         url: cPlusIcon,
-        link:"https://www.w3schools.com/cpp/cpp_intro.asp"
+        link: "https://www.w3schools.com/cpp/cpp_intro.asp",
       },
     ],
     Frontend: [
@@ -49,31 +49,31 @@ const Skills = () => {
         heading: "Frontend",
         title: "React",
         url: reactIcon,
-        link:"https://reactjs.org/"
+        link: "https://reactjs.org/",
       },
       {
         id: 2,
         title: "Javascript",
         url: javascriptIcon,
-        link:"https://www.javascript.com/"
+        link: "https://www.javascript.com/",
       },
       {
         id: 3,
         title: "HTML",
         url: htmlIcon,
-        link: "https://www.w3schools.com/html/html_intro.asp"
+        link: "https://www.w3schools.com/html/html_intro.asp",
       },
       {
         id: 4,
         title: "CSS",
         url: cssIcon,
-        link:"https://www.w3schools.com/css/css_intro.asp"
+        link: "https://www.w3schools.com/css/css_intro.asp",
       },
       {
         id: 5,
         title: "Tailwind",
         url: tailwindIcon,
-        link:"https://tailwindcss.com/"
+        link: "https://tailwindcss.com/",
       },
     ],
     Backend: [
@@ -82,13 +82,13 @@ const Skills = () => {
         heading: "Backend",
         title: "Express",
         url: expressIcon,
-        link:"https://expressjs.com/"
+        link: "https://expressjs.com/",
       },
       {
         id: 2,
         title: "NodeJS",
         url: nodeIcon,
-        link:"https://nodejs.org/en/"
+        link: "https://nodejs.org/en/",
       },
     ],
     Database: [
@@ -97,7 +97,7 @@ const Skills = () => {
         heading: "Database",
         title: "Mongodb",
         url: mongodbIcon,
-        link:"https://www.mongodb.com/"
+        link: "https://www.mongodb.com/",
       },
     ],
     DevelopmentTools: [
@@ -106,19 +106,19 @@ const Skills = () => {
         heading: "Web Development Tools",
         title: "Git",
         url: gitIcon,
-        link:"https://git-scm.com/"
+        link: "https://git-scm.com/",
       },
       {
         id: 2,
         title: "Github",
         url: githubIcon,
-        link:"https://github.com/"
+        link: "https://github.com/",
       },
       {
         id: 3,
         title: "Redux",
         url: reduxIcon,
-        link:"https://redux.js.org/"
+        link: "https://redux.js.org/",
       },
     ],
     CloudServices: [
@@ -127,19 +127,19 @@ const Skills = () => {
         heading: "Cloud Services",
         title: "Heroku",
         url: herokuIcon,
-        link:"https://dashboard.heroku.com/login"
+        link: "https://dashboard.heroku.com/login",
       },
       {
         id: 2,
         title: "Firebase",
         url: firebaseIcon,
-        link:"https://firebase.google.com/"
+        link: "https://firebase.google.com/",
       },
       {
         id: 3,
         title: "Netlify",
         url: netlifyIcon,
-        link:"https://www.netlify.com/"
+        link: "https://www.netlify.com/",
       },
     ],
   });
@@ -180,25 +180,33 @@ const Skills = () => {
         <Loader title="Skills" />
       ) : (
         <div className="w-screen">
-            <Navbar image={News} title="Skills" search="skills" />
-            <div data-aos="zoom-in" data-aos-duration="1100" className="flex items-center w-screen h-[calc(100vh_-_6.1rem)] sm:h-[calc(100vh_-_6.6rem)] md:h-[calc(100vh_-_7.8rem)]">
-              <Slider
-                ref={slider}
-                {...settings}
-                className="w-full flex items-center"
-              >
-                {Object.values(skillset).map((s, idx) => (
-                  <div className="flex flex-col items-center p-3 font-google" key={idx}>
-                    <h1 className="text-center text:xl md:text-2xl font-serif font-semibold text-black hover:underline underline-offset-2 ">
-                      {s[0].heading}
-                    </h1>
-                    {s.map((i) => (
-                      <a href={i.link} target="_blank" rel="noreferrer">
+          <Navbar image={News} title="Skills" search="skills" />
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1100"
+            className="flex items-center w-screen h-[calc(100vh_-_6.1rem)] sm:h-[calc(100vh_-_6.6rem)] md:h-[calc(100vh_-_7.8rem)]"
+          >
+            <Slider
+              ref={slider}
+              {...settings}
+              className="w-full flex items-center"
+            >
+              {Object.values(skillset).map((s, idx) => (
+                <div
+                  className="flex flex-col items-center p-3 font-google"
+                  key={idx}
+                >
+                  <h1 className="text-center text:xl md:text-2xl font-serif font-semibold text-black hover:underline underline-offset-2 ">
+                    {s[0].heading}
+                  </h1>
+                  {s.map((i) => (
+                    <a href={i.link} target="_blank" rel="noreferrer">
                       <figure
                         className="w-full p-2 flex items-center cursor-pointer hover:animate-myAnim"
                         key={i.id}
                       >
                         <img
+                          loading="lazy"
                           src={i.url}
                           className="w-1/5 mr-1 sm:mr-3 rounded-lg p-1 shadow bg-white"
                           alt=""
@@ -206,20 +214,21 @@ const Skills = () => {
                         <figcaption className=" md:text-lg">
                           {i.title}
                         </figcaption>
-                      </figure></a>
-                    ))}
-                  </div>
-                ))}
-              </Slider>
-            </div>
-            <div className="flex absolute inset-y-1/2 w-screen justify-between px-2 pr-0 items-center z-10">
-              <button onClick={() => slider?.current?.slickPrev()}>
-                <MdArrowBackIos className="text-5xl text-indigo-700 hover:text-indigo-800" />
-              </button>
-              <button onClick={() => slider?.current?.slickNext()}>
-                <MdArrowForwardIos className="text-5xl text-indigo-700 hover:text-indigo-800" />
-              </button>
-            </div>
+                      </figure>
+                    </a>
+                  ))}
+                </div>
+              ))}
+            </Slider>
+          </div>
+          <div className="flex absolute inset-y-1/2 w-screen justify-between px-2 pr-0 items-center z-10">
+            <button onClick={() => slider?.current?.slickPrev()}>
+              <MdArrowBackIos className="text-5xl text-indigo-700 hover:text-indigo-800" />
+            </button>
+            <button onClick={() => slider?.current?.slickNext()}>
+              <MdArrowForwardIos className="text-5xl text-indigo-700 hover:text-indigo-800" />
+            </button>
+          </div>
         </div>
       )}
     </div>

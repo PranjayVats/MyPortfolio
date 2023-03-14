@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdOptions } from "react-icons/io";
 import { AiOutlineSetting, AiOutlineSearch } from "react-icons/ai";
 import { CgMenuGridO } from "react-icons/cg";
 import ProfileImage from "../assets/profile.webp";
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog } from "@headlessui/react";
 import Github from "../assets/githubLink.webp";
 import Gmail from "../assets/gmail.webp";
 import Linked from "../assets/linkedin.webp";
@@ -35,6 +35,7 @@ const Navbar = (props) => {
         </div>
         <figure className="flex justify-between items-center text-[#5F6368] text-xl font-google md:mr-10">
           <img
+            loading="lazy"
             src={props.image}
             className="w-6
            sm:w-10 mr-2"
@@ -47,19 +48,17 @@ const Navbar = (props) => {
             <AiOutlineSearch className="text-2xl mr-3" />
             Search in {props.search}
           </span>
-
-          <button>
-            <IoMdOptions className="text-2xl text-[#676B6F]" />
-          </button>
+          <IoMdOptions className="text-2xl text-[#676B6F]" />
         </div>
         <img
+          loading="lazy"
           className="block md:hidden rounded-full h-6 sm:h-8 "
           src={ProfileImage}
           alt="profile"
         />
       </div>
       <ul className="hidden md:flex items-center">
-        <li className="mr-3 text-base cursor-pointer hover:underline">
+        <li className="mr-3">
           <AiOutlineSetting className="text-[#5F6368] text-2xl font-bold" />
         </li>
         <li className="mx-3 cursor-pointer">
@@ -67,110 +66,102 @@ const Navbar = (props) => {
             className="text-[#5F6368] text-2xl"
             onClick={openModal}
           />
-          <Transition appear show={isOpen} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={closeModal}>
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <div className="fixed inset-0 bg-black bg-opacity-10" />
-              </Transition.Child>
-              <div className="fixed inset-0 overflow-y-auto mr-7">
-                <div className="flex h-1/2 md:2/3 lg:h-5/6 items-center justify-end text-center">
-                  <Transition.Child
-                    as={Fragment}
-                    enter="ease-out duration-300"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="ease-in duration-200"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
+          <Dialog
+            as="div"
+            className="relative z-10"
+            open={isOpen}
+            onClose={closeModal}
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-10" />
+            <div className="fixed inset-0 overflow-y-auto mr-7">
+              <div className="flex h-1/2 md:2/3 lg:h-5/6 items-center justify-end text-center">
+                <Dialog.Panel className="w-2/5 sm:w-1/5 md:w-1/6 transform rounded-lg p-1 md:p-2 bg-white shadow-xl transition-all">
+                  <Dialog.Title
+                    as="h3"
+                    data-aos="fade-down"
+                    data-aos-duration="1500"
+                    className="hidden md:flex font-google font-semibold justify-center md:text-xs lg:text-xl text-gray-600"
                   >
-                    <Dialog.Panel className="w-2/5 sm:w-1/5 md:w-1/6 transform rounded-lg p-1 md:p-2 bg-white shadow-xl transition-all">
-                      <Dialog.Title
-                        as="h3"
-                        data-aos="fade-down"
-                        data-aos-duration="1500"
-                        className="hidden md:flex font-google font-semibold justify-center md:text-xs lg:text-xl text-gray-600"
-                      >
-                        My Socials
-                      </Dialog.Title>
-                      <div className=" grid grid-cols-2  items-center h-full">
-                        <a
-                          data-aos="fade-down"
-                          data-aos-duration="1100"
-                          className=" w-full md:p-3 flex flex-col items-center justify-center focus:outline-none"
-                          href="https://mail.google.com/mail/?view=cm&to=pranjayvats22062001@gmail.com"
-                        >
-                          <img
-                            src={Gmail}
-                            className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
-                            alt=""
-                          />
-                          <p className="hidden sm:block sm:text-xs md:text-sm lg:text-base">
-                            Gmail
-                          </p>
-                        </a>
-                        <a
-                          data-aos="fade-down"
-                          data-aos-duration="1200"
-                          className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
-                          href="https://www.linkedin.com/in/pranjay-vats-4bb250205/"
-                        >
-                          <img
-                            src={Linked}
-                            className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
-                            alt=""
-                          />
-                          <p className="hidden sm:block sm:text-xs md:text-sm lg:text-base">
-                            LinkedIn
-                          </p>
-                        </a>
-                        <a
-                          data-aos="fade-down"
-                          data-aos-duration="1300"
-                          className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none "
-                          href="https://github.com/PranjayVats"
-                        >
-                          <img
-                            src={Github}
-                            className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
-                            alt=""
-                          />
-                          <p className="hidden sm:block sm:text-xs md:text-sm lg:text-base">
-                            Github
-                          </p>
-                        </a>
-                        <a
-                          data-aos="fade-down"
-                          data-aos-duration="1400"
-                          className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
-                          href="https://www.instagram.com/vatspranjay.2206/"
-                        >
-                          <img
-                            src={Instagram}
-                            className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
-                            alt=""
-                          />
-                          <p className="hidden sm:block sm:text-xs md:text-sm lg:text-base">
-                            Instagram
-                          </p>
-                        </a>
-                      </div>
-                    </Dialog.Panel>
-                  </Transition.Child>
-                </div>
+                    My Socials
+                  </Dialog.Title>
+                  <div className=" grid grid-cols-2  items-center h-full">
+                    <a
+                      data-aos="fade-down"
+                      data-aos-duration="1100"
+                      className=" w-full md:p-3 flex flex-col items-center justify-center focus:outline-none"
+                      href="https://mail.google.com/mail/?view=cm&to=pranjayvats22062001@gmail.com"
+                    >
+                      <img
+                        loading="lazy"
+                        src={Gmail}
+                        className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
+                        alt=""
+                      />
+                      <p className="hidden sm:block sm:text-xs md:text-sm lg:text-base">
+                        Gmail
+                      </p>
+                    </a>
+                    <a
+                      data-aos="fade-down"
+                      data-aos-duration="1200"
+                      className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
+                      href="https://www.linkedin.com/in/pranjay-vats-4bb250205/"
+                    >
+                      <img
+                        loading="lazy"
+                        src={Linked}
+                        className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
+                        alt=""
+                      />
+                      <p className="hidden sm:block sm:text-xs md:text-sm lg:text-base">
+                        LinkedIn
+                      </p>
+                    </a>
+                    <a
+                      data-aos="fade-down"
+                      data-aos-duration="1300"
+                      className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none "
+                      href="https://github.com/PranjayVats"
+                    >
+                      <img
+                        loading="lazy"
+                        src={Github}
+                        className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
+                        alt=""
+                      />
+                      <p className="hidden sm:block sm:text-xs md:text-sm lg:text-base">
+                        Github
+                      </p>
+                    </a>
+                    <a
+                      data-aos="fade-down"
+                      data-aos-duration="1400"
+                      className="md:p-3 w-full flex flex-col items-center justify-center focus:outline-none"
+                      href="https://www.instagram.com/vatspranjay.2206/"
+                    >
+                      <img
+                        loading="lazy"
+                        src={Instagram}
+                        className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
+                        alt=""
+                      />
+                      <p className="hidden sm:block sm:text-xs md:text-sm lg:text-base">
+                        Instagram
+                      </p>
+                    </a>
+                  </div>
+                </Dialog.Panel>
               </div>
-            </Dialog>
-          </Transition>
+            </div>
+          </Dialog>
         </li>
-        <li className="ml-3 cursor-pointer">
-          <img className="rounded-full h-8 " src={ProfileImage} alt="profile" />
+        <li className="ml-3">
+          <img
+            loading="lazy"
+            className="rounded-full h-8"
+            src={ProfileImage}
+            alt="profile"
+          />
         </li>
       </ul>
     </nav>

@@ -59,6 +59,7 @@ const Search = () => {
                 <span className="text-red-500">s</span>
               </div>
               <img
+                loading="lazy"
                 className="block sm:hidden rounded-full h-8 "
                 src={ProfileImage}
                 alt="profile"
@@ -72,7 +73,7 @@ const Search = () => {
             </div>
           </div>
           <ul className="hidden sm:flex items-center">
-            <li className="mr-3 text-base cursor-pointer hover:underline">
+            <li className="mr-3">
               <AiOutlineSetting className="text-[#5F6368] text-2xl font-bold" />
             </li>
             <li className="mx-1 md:mx-3 cursor-pointer">
@@ -121,6 +122,7 @@ const Search = () => {
                               href="https://mail.google.com/mail/?view=cm&to=pranjayvats22062001@gmail.com"
                             >
                               <img
+                                loading="lazy"
                                 src={Gmail}
                                 className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
                                 alt=""
@@ -136,6 +138,7 @@ const Search = () => {
                               href="https://www.linkedin.com/in/pranjay-vats-4bb250205/"
                             >
                               <img
+                                loading="lazy"
                                 src={Linked}
                                 className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
                                 alt=""
@@ -151,6 +154,7 @@ const Search = () => {
                               href="https://github.com/PranjayVats"
                             >
                               <img
+                                loading="lazy"
                                 src={Github}
                                 className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
                                 alt=""
@@ -166,6 +170,7 @@ const Search = () => {
                               href="https://www.instagram.com/vatspranjay.2206/"
                             >
                               <img
+                                loading="lazy"
                                 src={Instagram}
                                 className="w-5/6 hover:shadow-2xl p-1 rounded-3xl"
                                 alt=""
@@ -182,8 +187,9 @@ const Search = () => {
                 </Dialog>
               </Transition>
             </li>
-            <li className="ml-3 cursor-pointer ">
+            <li className="ml-3">
               <img
+                loading="lazy"
                 className="rounded-full h-8 "
                 src={ProfileImage}
                 alt="profile"
@@ -193,35 +199,36 @@ const Search = () => {
         </div>
         <div className="flex w-full mt-5 md:pl-6">
           <ul className="flex px-3 sm:px-0 items-center w-full lg:w-3/5 justify-around text-xs md:text-sm">
-            <li className="flex items-center font-medium cursor-pointer hover:text-blue-600">
+            <li className="flex items-center font-medium">
               <img
+                loading="lazy"
                 src={SearchIcon}
                 className="hidden md:block md:mr-1 md:w-4 md:h-4"
                 alt="searchIcon"
               />
               All
             </li>
-            <li className="flex items-center font-medium cursor-pointer hover:text-blue-600">
+            <li className="flex items-center font-medium">
               <BiImage className="hidden md:block md:mr-1 text-[#676767]" />
               Images
             </li>
-            <li className="flex items-center font-medium cursor-pointer hover:text-blue-600">
+            <li className="flex items-center font-medium">
               <TfiBookmarkAlt className="hidden md:block md:mr-1 text-[#676767]" />
               Books
             </li>
-            <li className="flex items-center font-medium cursor-pointer hover:text-blue-600">
+            <li className="flex items-center font-medium">
               <BiNews className="hidden md:block md:mr-1 text-[#676767]" />
               News
             </li>
-            <li className="flex items-center font-medium cursor-pointer hover:text-blue-600">
+            <li className="flex items-center font-medium">
               <BsFilePlay className="hidden md:block md:mr-1 text-[#676767]" />
               Videos
             </li>
-            <li className="flex items-center font-medium cursor-pointer hover:text-blue-600">
+            <li className="flex items-center font-medium">
               <BiDotsVerticalRounded className="hidden md:block mr-1 md:mr-1 text-[#676767]" />
               More
             </li>
-            <li className="text-[#676767]  md:py-1 md:px-3 md:ml-20 md:hover:ring-1 md:ring-gray-300 md:hover:bg-gray-50">
+            <li className="text-[#676767] md:py-1 md:px-3 md:ml-20 md:ring-gray-300">
               Tools
             </li>
           </ul>
@@ -402,10 +409,16 @@ const Search = () => {
             <div className="about flex flex-col mt-3">
               <span className="flex items-center">
                 Hey everyone!
-                <img src={Namaste} className="w-12 mr-1" alt="namaste" />
+                <img
+                  loading="lazy"
+                  src={Namaste}
+                  className="w-12 mr-1"
+                  alt="namaste"
+                />
               </span>
               <p>
                 <img
+                  loading="lazy"
                   src={ProfileImage2}
                   className="float-right w-1/4 sm:1/12 sm:p-2 md:w-1/6 lg:w-1/3"
                   alt="profileImage"
