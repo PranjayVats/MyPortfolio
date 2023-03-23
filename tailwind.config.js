@@ -11,7 +11,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        backgroundGif: "url('./assets/confetti.gif')",
+        backgroundGif: "url('./assets/confetti.webp')",
         backgroundContact: "url('./assets/contact.webp')",
         backgroundSchool: "url('./assets/school.webp')",
         backgroundCollege: "url('./assets/college.webp')",

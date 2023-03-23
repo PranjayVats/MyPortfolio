@@ -3,9 +3,9 @@ import Classroom from "../assets/googleClassroom.webp";
 import { Tab } from "@headlessui/react";
 import Navbar from "../layout/Navbar";
 import Loader from "../layout/Loader";
-import Gif1 from "../assets/edu2.gif";
-import Gif2 from "../assets/edu1.gif";
-import Gif3 from "../assets/edu.gif";
+import Gif1 from "../assets/edu2.webp";
+import Gif2 from "../assets/edu1.webp";
+import Gif3 from "../assets/edu.webp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

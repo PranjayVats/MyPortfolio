@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Error from "../assets/404.gif";
+import Error from "../assets/404.webp";
 import P from "../assets/p-logo.webp";
 import { NavLink } from "react-router-dom";
 import AOS from "aos";

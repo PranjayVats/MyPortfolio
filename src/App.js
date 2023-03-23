@@ -1,26 +1,19 @@
-import "./App.css";
-import React, { Fragment, useEffect } from "react";
-import WebFont from "webfontloader";
-import Search from "./pages/Search";
-import Home from "./pages/Home";
-import Skills from "./pages/Skills";
-import Header from "./layout/Header";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Education from "./pages/Education";
-import Projects from "./pages/Projects";
+import React, { Fragment, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Error404 from "./pages/Error404";
 import { ToastContainer } from "react-toastify";
+import "./App.css";
 import "react-toastify/dist/ReactToastify.min.css";
+import Home from "./pages/Home";
+const Search = lazy(() => import("./pages/Search"));
+const Skills = lazy(() => import("./pages/Skills"));
+const Header = lazy(() => import("./layout/Header"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Education = lazy(() => import("./pages/Education"));
+const Projects = lazy(() => import("./pages/Projects"));
+const Error404 = lazy(() => import("./pages/Error404"));
 
 function App() {
-  useEffect(() => {
-    WebFont.load({
-      google: { families: ["Lobster", "Roboto", "Drold Sans"] },
-    });
-  }, []);
-  
   return (
     <Fragment>
       <ToastContainer />
@@ -29,13 +22,54 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/search" element={<Search />}></Route>
-          <Route path="/skills" element={<Skills />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/education" element={<Education />}></Route>
-          <Route path="/projects" element={<Projects />}></Route>
-          <Route path="*" element={<Error404 />}>
-          </Route>
+          <Route
+            path="/skills"
+            element={
+              <Suspense fallback={<>...</>}>
+                <Skills />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="/about"
+            element={
+              <Suspense fallback={<>...</>}>
+                <About />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="/contact"
+            element={
+              <Suspense fallback={<>...</>}>
+                <Contact />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="/education"
+            element={
+              <Suspense fallback={<>...</>}>
+                <Education />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="/projects"
+            element={
+              <Suspense fallback={<>...</>}>
+                <Projects />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<>...</>}>
+                <Error404 />
+              </Suspense>
+            }
+          ></Route>
         </Routes>
       </Router>
     </Fragment>

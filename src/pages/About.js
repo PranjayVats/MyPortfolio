@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProfileImage2 from "../assets/aboutImage2.webp";
-import Namaste from "../assets/namaste-covid.gif";
+import Namaste from "../assets/namaste-covid.webp";
 import GoogleCloud from "../assets/googleCloud.svg";
 import Photos from "../assets/googlePhotos.webp";
 import Loader from "../layout/Loader";

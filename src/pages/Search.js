@@ -8,7 +8,7 @@ import { BiDotsVerticalRounded, BiImage, BiNews } from "react-icons/bi";
 import { BsFilePlay } from "react-icons/bs";
 import { TfiBookmarkAlt } from "react-icons/tfi";
 import SearchIcon from "../assets/search.webp";
-import Namaste from "../assets/namaste-covid.gif";
+import Namaste from "../assets/namaste-covid.webp";
 import { NavLink } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { FiChevronDown } from "react-icons/fi";
