@@ -167,7 +167,7 @@ const Home = () => {
             <li className="mx-1 flex sm:mx-2 items-center h-full">
               <img
                 loading="lazy"
-                className="rounded-full h-2/3 sm:h-5/6  md:h-full"
+                className="rounded-full h-2/3 w-auto sm:h-5/6 md:h-full"
                 src={ProfileImage}
                 alt="profile"
               />

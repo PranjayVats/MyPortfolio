@@ -319,7 +319,7 @@ const Projects = () => {
                               </div>
                               <div className="flex justify-end text-sm sm:text-base w-full">
                                 <a
-                                  href="https://effulgent-platypus-ef5a71.netlify.app/"
+                                  href="https://pranjay-vats-portfolio.netlify.app/"
                                   className="bg-slate-700 text-white px-3 py-1 mx-2 rounded-sm"
                                 >
                                   Live
