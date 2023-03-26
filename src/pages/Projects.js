@@ -167,11 +167,7 @@ const Projects = () => {
                     >
                       <div className="fixed inset-0 bg-black bg-opacity-20" />
                       <div className="fixed inset-0 w-full">
-                        <div
-                          // data-aos="fade-down"
-                          // data-aos-duration="1500"
-                          className="flex h-full items-center justify-end text-center"
-                        >
+                        <div className="flex h-full items-center justify-end text-center">
                           <Dialog.Panel className="w-11/12 md:w-3/4 lg:w-2/3 h-auto transform p-1 md:p-2 bg-white transition-all m-auto mt-28 xs:mt-32 md:mt-36 lg:mt-32">
                             <Dialog.Title
                               as="h3"
