@@ -37,7 +37,7 @@ const Navbar = (props) => {
           <img
             loading="lazy"
             src={props.image}
-            className="w-6
+            className="w-6 h-auto
            sm:w-10 mr-2"
             alt="drive-Logo"
           />
@@ -79,7 +79,7 @@ const Navbar = (props) => {
                   <Dialog.Title
                     as="h3"
                     data-aos="fade-down"
-                    data-aos-duration="1500"
+                    data-aos-duration="1100"
                     className="hidden md:flex font-google font-semibold justify-center md:text-xs lg:text-xl text-gray-600"
                   >
                     My Socials

@@ -234,19 +234,10 @@ const Home = () => {
           </Listbox>
         </div>
         <div className="flex h-1/12 my-6 w-4/5 xs:w-3/5 sm:w-2/5 md:w-1/3 lg:w-1/4 font-sans justify-between mx-auto ">
-          <NavLink
-            to={selectedSearch ? "/search" : "/"}
-            data-aos="fade-right"
-            data-aos-duration="1300"
-            className="flex items-center px-1 sm:px-2 h-1/2 sm:h-4/5 py-1 sm:py-2 rounded text-[10px] sm:text-xs md:text-sm bg-gray-50 cursor-default"
-          >
+          <button className="flex items-center px-1 sm:px-2 h-1/2 sm:h-4/5 py-1 sm:py-2 rounded text-[10px] sm:text-xs md:text-sm bg-gray-50 cursor-default">
             Google Search
-          </NavLink>
-          <button
-            data-aos="fade-left"
-            data-aos-duration="1300"
-            className="flex items-center px-1 sm:px-2 h-1/2 sm:h-3/4 py-1 sm:py-2 rounded text-[10px] sm:text-xs md:text-sm bg-gray-50 cursor-default"
-          >
+          </button>
+          <button className="flex items-center px-1 sm:px-2 h-1/2 sm:h-3/4 py-1 sm:py-2 rounded text-[10px] sm:text-xs md:text-sm bg-gray-50 cursor-default">
             I'm Feeling Lucky
           </button>
         </div>

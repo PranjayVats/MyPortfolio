@@ -47,7 +47,6 @@ module.exports = {
       serif: ["ui-serif", "Georgia"],
       display: ["Oswald"],
       google: ["GOOGLE"],
-      sanskrit: ["Sanskrit"],
     },
   },
   plugins: [],
