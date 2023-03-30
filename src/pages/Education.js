@@ -6,8 +6,6 @@ import Loader from "../layout/Loader";
 import Gif1 from "../assets/edu2.webp";
 import Gif2 from "../assets/edu1.webp";
 import Gif3 from "../assets/edu.webp";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -16,7 +14,7 @@ function classNames(...classes) {
 const Education = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
-    AOS.init();
+    
     const timer = setTimeout(() => {
       setShow(true);
     }, 2500);

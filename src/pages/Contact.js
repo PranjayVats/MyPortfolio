@@ -6,8 +6,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import Navbar from "../layout/Navbar";
 import Loader from "../layout/Loader";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Contact = () => {
   const {
@@ -51,7 +49,6 @@ const Contact = () => {
 
   const [show, setShow] = useState(false);
   useEffect(() => {
-    AOS.init();
     const timer = setTimeout(() => {
       setShow(true);
     }, 2500);

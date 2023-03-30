@@ -1,8 +1,10 @@
-import React, { Fragment, lazy, Suspense } from "react";
+import React, { Fragment, lazy, Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.min.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Home from "./pages/Home";
 const Search = lazy(() => import("./pages/Search"));
 const Skills = lazy(() => import("./pages/Skills"));
@@ -14,6 +16,9 @@ const Projects = lazy(() => import("./pages/Projects"));
 const Error404 = lazy(() => import("./pages/Error404"));
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Fragment>
       <ToastContainer />
@@ -21,7 +26,14 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/search" element={<Search />}></Route>
+          <Route
+            path="/search"
+            element={
+              <Suspense fallback={<>...</>}>
+                <Search />
+              </Suspense>
+            }
+          ></Route>
           <Route
             path="/skills"
             element={

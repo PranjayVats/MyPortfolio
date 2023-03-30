@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import {
   MdClose,
   MdMenu,
@@ -14,14 +14,9 @@ import Github from "../assets/githubLink.webp";
 import Gmail from "../assets/gmail.webp";
 import Linked from "../assets/linkedin.webp";
 import Instagram from "../assets/instagram.webp";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <>
       <div className="flex items-center text-center">

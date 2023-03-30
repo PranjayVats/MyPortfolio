@@ -1,14 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Error from "../assets/404.webp";
 import P from "../assets/p-logo.webp";
 import { NavLink } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Error404 = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <div className="contact flex flex-col h-[calc(100vh_-_4rem)] overflow-y-auto overflow-x-hidden w-screen items-center justify-center">
       <div

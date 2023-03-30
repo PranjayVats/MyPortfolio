@@ -5,13 +5,10 @@ import GoogleCloud from "../assets/googleCloud.svg";
 import Photos from "../assets/googlePhotos.webp";
 import Loader from "../layout/Loader";
 import Navbar from "../layout/Navbar";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const About = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
-    AOS.init();
     const timer = setTimeout(() => {
       setShow(true);
     }, 2500);
