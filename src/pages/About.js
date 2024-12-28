@@ -85,17 +85,17 @@ const About = () => {
                 in my college life.
               </p>
               <a
-                className="flex rounded-3xl w-2/3 sm:w-1/4 justify-between border border-orange-500 items-center p-2 animate-bounce mt-8"
+                className="flex rounded-3xl w-1/3 sm:w-1/4 justify-between border border-orange-500 items-center p-2 animate-bounce mt-8"
                 href="https://drive.google.com/file/d/1QUN4yeR0PTR5z56EaAlRFRoeafOL4zQj/view"
                 target="_blank"
                 rel="noreferrer"
               >
-                <figure className="flex w-auto text-lg justify-center m-auto">
+                <figure className="flex text-lg justify-center gap-1">
                   <img
                     src={GoogleCloud}
                     alt="googlecloud"
                     loading="lazy"
-                    className="w-1/5 sm:1/6 mr-1"
+                    className="w-1/6 sm:1/6"
                   />
                   <figcaption className="flex">My Resume</figcaption>
                 </figure>

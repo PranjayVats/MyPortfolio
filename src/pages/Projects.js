@@ -62,12 +62,12 @@ const Projects = () => {
               data-aos-duration="1100"
               className="sidebar hidden lg:flex flex-col flex-wrap col-span-1 cursor-default"
             >
-              <figure className="flex w-1/2 border-gray-200 border shadow-md rounded-3xl m-3 px-4 py-2.5">
+              <figure className="flex w-2/5 border-gray-200 justify-center border shadow-md rounded-3xl m-3 px-4 py-2.5 gap-2">
                 <img
                   loading="lazy"
                   src={AddIcon}
                   alt="addIcon"
-                  className="w-1/3 mr-3 rounded-full"
+                  className="w-1/3 aspect-square rounded-full"
                 />
                 <figcaption> New</figcaption>
               </figure>

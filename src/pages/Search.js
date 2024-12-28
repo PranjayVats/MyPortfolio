@@ -129,9 +129,9 @@ const Search = () => {
                   Pranjay Vats - MyProjects
                 </h2>
                 <p className="text-sm text-[#65696E] mt-2">
-                  Ecommerce-Webapplication - It is a webapplicataion made using
+                  Ecommerce-WebApp - It is a web-application made using
                   MERN(MongoDB, Express, React & NodeJS) stack and React Redux.
-                  It is fully fledge Ecommerce website with Payment method also.
+                  It is full-fledged Ecommerce website with Payment method also.
                 </p>
               </NavLink>
               <h2 className="text-lg sm:text-xl md:text-2xl mt-10 mb-4">
