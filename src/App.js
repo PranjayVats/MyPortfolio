@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Home from "./pages/Home";
+import Hotjar from "@hotjar/browser";
 const Search = lazy(() => import("./pages/Search"));
 const Skills = lazy(() => import("./pages/Skills"));
 const Header = lazy(() => import("./layout/Header"));
@@ -17,7 +18,10 @@ const Error404 = lazy(() => import("./pages/Error404"));
 
 function App() {
   useEffect(() => {
+    const hotjarId = process.env.REACT_APP_HOTJAR_ID;
+    const hotjarVersion = process.env.REACT_APP_HOTJAR_VERSION;
     AOS.init();
+    Hotjar.init(hotjarId, hotjarVersion);
   }, []);
   return (
     <Fragment>
